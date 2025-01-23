@@ -1,5 +1,9 @@
 package com.example.interviewPractice.Interview;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class StringQuestion {
 //    Given an array of string words, return all strings in words that is a substring of
 //    another word. You can return the answer in any order.
@@ -23,7 +27,17 @@ public class StringQuestion {
 //    Explanation: No string of words is substring of another string.
 
     public static void main(String[] args){
-
+        String[] arr = {"mass","as","hero","superhero"};
+        Arrays.sort(arr);
+        List<String> data = new ArrayList<>();
+        for(int i=0;i<arr.length-1;i++){
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[j].contains(arr[i])){
+                    data.add(arr[i]);
+                    break;
+                }
+            }
+        }
+        System.out.println(data);
     }
-
 }
